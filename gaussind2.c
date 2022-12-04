@@ -9,11 +9,10 @@
 double Spr, Spr1, Spz;
 
 int main(int argc, char**argv)
- { int i, j, v;
+ { int i, j, v, M;
  if (argc!=2)
- cout<<"\n !!!ERROR!!! Example of command: ./gauss <dimension of LSAE> !!!ERROR!!!\n"<<endl, exit(1);
- int M=atoi(*++argv); // Enter the size LSAE
- cout<<"\tDimension of LSAE = "<<M<<endl;
+ M=atoi(*++argv); // Enter the size LSAE
+ printf(" Dimension of LSAE = %d\n",M);
  double itime, ftime, exec_time;
  
  double A[M][M], F[M], Xk[M], Zk[M];
