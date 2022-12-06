@@ -1,0 +1,12 @@
+#!/bin/sh
+#PBS -d <каталог, де знаходиться ваша програма>
+#PBS -l nodes=<ім’я виконуючого вузла>:ppn=<кількість ядер
+процесора>,walltime=00:30:00
+#PBS -N <ім’я файлу зі звітами>
+echo "File containing nodes:"
+echo $PBS_NODEFILE
+echo "Nodes for computing:"
+cat $PBS_NODEFILE
+echo "Start date: `date`"
+nohup ./<ім’я_ файлу_виконуємої_програми> <параметри>
+echo " End date: `date`"
