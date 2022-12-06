@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<time.h>
+#include<stdlib.h>
 #include<sys/time.h>
 #include <omp.h>
 
@@ -10,12 +11,12 @@ double Spr, Spr1, Spz;
 
 int main(int argc, char**argv)
  { int i, j, v, M;
- if (argc!=2)
  M=atoi(*++argv); // Enter the size LSAE
  printf(" Dimension of LSAE = %d\n",M);
  double itime, ftime, exec_time;
  
- double A[M][M], F[M], Xk[M], Zk[M];
+ double ( *A )[M] = malloc( sizeof( double[M][M] ) );
+ double F[M], Xk[M], Zk[M];
  double Rk[M], Sz[M], alf, bet, mf;
  
  for(mf=0,i = 0; i < M; i++)
